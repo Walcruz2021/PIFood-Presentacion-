@@ -1,0 +1,98 @@
+.navegacion-principal{
+  font-family:'Oswald', sans-serif;
+  color:white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;/*remover alineada*/
+  transition: all .8s ease;/*efecto de color al apuntar sobre items de navegacion*/
+  text-align: center;
+  margin-right: 4px;/*separacion entre los elementos de menu de nav*/
+  padding: 0.4rem 0.3rem;
+  display: block;/*colocamos opciones de nav uno debaqjo de otro*/
+  background-color:black;
+}
+
+.tit{
+  float:right;
+  padding:1rem;
+  background-color:#4787F6;
+}
+
+.linkCR{
+    color:white;
+    text-decoration:none;
+    /* display:flex;
+    justify-content: flex-start; */
+    float:left;
+    margin-top: 15px;
+    margin-left: 2rem;
+}
+
+.linkCR:hover{
+  transform: scale(1.2);
+  border:1px solid #1f53c5;
+  box-shadow: 0px 0px 50px #666;
+} 
+
+.cajaselect{
+    font-family: Arial;
+    border-radius: 5px 5px 0 0;
+    background: none repeat scroll 0 0 #eaeff1;
+    margin:1rem;
+    padding: 0.3rem;
+}
+
+.lista-select{
+  color: rgb(11, 78, 28);
+}
+
+ul.lista-precios li{
+  padding: 10px;
+} 
+
+@media (min-width:768px){
+ul.lista-precios li{
+  float: left;
+  width: 29%;
+}
+} 
+
+
+div.tabla-precio{
+  border:1px solid #e1e1e1;
+  background-color: white;
+  padding: 10px 10px 125px 10px;
+  text-align:center;
+  transition: all .6s ease;
+  margin-top: 0;
+} 
+
+div.tabla-precio:hover{
+  transform: scale(1.1);
+  border:1px solid #1f53c5;
+  box-shadow: 0px 0px 50px #666;
+
+} 
+
+.notSearch{
+  text-align: center;
+  color:red
+}
+
+.migaja{
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 0;
+  color:#337DFF
+}
+
+/* .search{
+  display:flex;
+  justify-content: flex-end;
+} */
+
+.button3{
+  padding: 0.3rem;
+  background-color:rgb(44, 13, 13);
+  color:white
+}

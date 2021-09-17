@@ -1,0 +1,29 @@
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 4px; /* 0 is for top and bottom. Feel free to change it */
+    transition: background-color .3s;
+}
+
+ul.pagination li a.active {
+    background-color: #af4c6a;
+    border-radius: 5px;
+    color:rgb(244, 245, 235);
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+
+div.center {
+    text-align: center;
+}

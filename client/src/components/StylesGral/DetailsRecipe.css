@@ -1,0 +1,44 @@
+.contenedor{
+    max-width:100rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.grid{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    /*coloca las dos columnas una debajo de la otra. Sin esto las columnas en el 
+    sector CONTACTO(formulario e imagen quedaruian una allado de la otra)*/
+}
+
+.column-6{
+    margin-top: 0;
+    flex:0 0 calc(39%)
+}
+
+.column-7{
+    margin-top: 0;
+    flex:0 0 calc(39%);
+}
+
+.details-img{
+    text-align: center;
+}
+
+.title{
+text-align: center;
+font-weight: bold;
+}
+
+.title2{
+    font-weight: bold;
+}
+
+.p{
+ text-align:justify;
+}

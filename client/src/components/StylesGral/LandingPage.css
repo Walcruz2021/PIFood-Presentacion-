@@ -1,0 +1,42 @@
+.image-fondo{
+background-image: url("../imagenes/asado2.jpg");
+
+/* posiionar imagen muestra imagen desde el centro y expandir */
+background-position: center center; 
+
+/* muestra imagen pero que tome todo el alto y ancho disponible(tanto altura como anchgo)pero respetando proporciones */
+background-size: cover;
+height:100vh;
+
+}
+
+@media (min-width:768px){
+    .image-fondo{
+      height:86vh; /*propiedad para darle tamaño a esta imagen 100vh segun altura de pantalla*/
+      min-height:20rem;/*le doy un minimo de tamaño para que no sea mas pequeña que este valor*/
+    }
+}
+
+
+.tittle{
+ color:white; 
+ font-size:5rem; 
+ text-align: center;
+}
+
+.button1{
+    font-size: 2rem;
+    text-align: center;
+    margin: 4rem;
+    border-radius: 6px;/*se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos. */
+    color:white;
+    background-color: #010d13;
+    border: 2px solid white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.button1:hover{
+    color: #060707;
+    background-color: #ffffff;
+  }

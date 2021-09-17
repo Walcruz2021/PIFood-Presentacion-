@@ -1,0 +1,22 @@
+.contenedor2{
+    max-width:70rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.inpImag{
+    width: 20rem;
+    height: 22px;
+}
+
+.labImag{
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: cornflowerblue;
+}
+
+.nota{
+    color:red;
+    font-weight: bold;
+    font-size: 1rem;
+}
