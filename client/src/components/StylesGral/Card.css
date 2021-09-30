@@ -1,4 +1,7 @@
-.cardita li{
- margin-left: 25px;
- font-size: 12px;
+.card{
+    height: 100rem !important;
+    padding: 1rem !important;
+}
+.btn{
+padding: 1rem !important;
 }

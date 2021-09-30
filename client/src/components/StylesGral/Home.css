@@ -1,89 +1,221 @@
-.navegacion-principal{
-  font-family:'Oswald', sans-serif;
-  color:white;
-  font-size: 1rem;
+div.barra {
+  background-color: #353535;
+  padding: 5px;
+  height: 75px;
+}
+
+.contenedor {
+  width: 98%;
+  /*dispositivo pequeño toara un 95% */
+  margin: 0 auto;
+}
+
+
+@media (min-width:480px) {
+  .contenedor {
+    width: 90%;
+    /*dispositivo pequeño toara un 95% */
+  }
+
+}
+
+div.logo {
+  width: 70%;
+  float: left;
+  font-size: 1.5rem;
+}
+
+div.logo h4 {
+  color: bisque;
+  text-decoration: none;
+}
+
+@media(min-width:768px) {
+  div.logo {
+    width: 33%;
+    margin-top: 10px;
+    font-size: 2rem;
+    height: 3rem;
+  }
+}
+
+nav.navegacion-principal a {
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  text-decoration: none;/*remover alineada*/
-  transition: all .8s ease;/*efecto de color al apuntar sobre items de navegacion*/
+  text-decoration: none;
+  transition: all .8s ease;
   text-align: center;
-  margin-right: 4px;/*separacion entre los elementos de menu de nav*/
-  padding: 0.4rem 0.3rem;
-  display: block;/*colocamos opciones de nav uno debaqjo de otro*/
-  background-color:black;
+  margin-right: 4px;
+  padding: 0.4 rem 0.3rem;
+  display: block;
 }
 
-.tit{
-  float:right;
-  padding:1rem;
-  background-color:#4787F6;
+
+/* nav.navegacion-principal a:hover {
+  background-color: #1f53c5;
+} */
+
+nav.navegacion-principal a:last-child {
+  /*modificacion ultima opcion de navegacion*/
+  border: 2px solid #1f53c5;
+  color: #1f53c5;
 }
 
-.linkCR{
-    color:white;
-    text-decoration:none;
-    /* display:flex;
+nav.navegacion-principal a:hover {
+
+  color: white;
+}
+
+
+nav.navegacion-principal {
+  display: none;
+  width: 100%;
+  margin-top: 40px;
+}
+
+@media(min-width:768px) {
+  nav.navegacion-principal {
+    width: 60%;
+    text-align: right;
+    display: inline-block; 
+    margin-top: 0.5px;
+    float: right;
+ 
+  }
+
+  nav.navegacion-principal a {
+    display: inline-block;
+    /* padding: 1rem 0.3rem; */
+   
+  }
+}
+
+div.menu-movil {
+  width: 60px;
+  display: block;
+  float: left;
+  margin-top: 2px;
+
+}
+
+div.menu-movil:hover {
+  cursor: pointer;
+  /*cambia a manito del cursor*/
+}
+
+
+@media(min-width:768px) {
+  div.menu-movil {
+    display: none;
+  }
+}
+
+
+div.menu-movil span {
+  height: 8px;
+  margin-bottom: 6px;
+  background-color: white;
+  display: block;
+}
+
+
+
+.tit {
+  float: right;
+  padding: 1rem;
+  background-color: #4787F6;
+  margin-top: 10px;
+}
+
+.linkCR {
+  color: white;
+  text-decoration: none;
+  /* display:flex;
     justify-content: flex-start; */
-    float:left;
-    margin-top: 15px;
-    margin-left: 2rem;
+  float: left;
+  margin-top: 15px;
+  margin-left: 2rem;
 }
 
-.linkCR:hover{
+.linkCR:hover {
   transform: scale(1.2);
-  border:1px solid #1f53c5;
+  border: 1px solid #1f53c5;
   box-shadow: 0px 0px 50px #666;
-} 
-
-.cajaselect{
-    font-family: Arial;
-    border-radius: 5px 5px 0 0;
-    background: none repeat scroll 0 0 #eaeff1;
-    margin:1rem;
-    padding: 0.3rem;
 }
 
-.lista-select{
+.selectbox {
+  display: flex;
+  justify-content: space-around;
+  /*espacio entre cada select*/
+  margin-top: 10px;
+  border-radius: 50px;
+
+}
+
+.select {
+  background: #b7bbbe;
+  color: white;
+  padding: 8px;
+  width: 120px;
+  height: 40px;
+  border: none;
+  font-size: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, .5);
+  -webkit-appearance: button;
+  outline: none;
+  float: left;
+  border-radius: 50px;
+  border: 2px solid #1f53c5;
+}
+
+
+.selectbox:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background: white;
+}
+
+.select.active,
+.select:hover {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
+  border: 2px solid #213f8f
+}
+
+.lista-select {
   color: rgb(11, 78, 28);
 }
 
-ul.lista-precios li{
+ul.lista-precios li {
   padding: 10px;
-} 
-
-@media (min-width:768px){
-ul.lista-precios li{
-  float: left;
-  width: 29%;
 }
-} 
+
+@media (min-width:768px) {
+  ul.lista-precios li {
+    float: left;
+    width: 29%;
+  }
+}
 
 
-div.tabla-precio{
-  border:1px solid #e1e1e1;
-  background-color: white;
-  padding: 10px 10px 125px 10px;
-  text-align:center;
-  transition: all .6s ease;
-  margin-top: 0;
-} 
-
-div.tabla-precio:hover{
-  transform: scale(1.1);
-  border:1px solid #1f53c5;
-  box-shadow: 0px 0px 50px #666;
-
-} 
-
-.notSearch{
+.notSearch {
   text-align: center;
-  color:red
+  color: red
 }
 
-.migaja{
+.migaja {
   text-align: center;
   font-size: 2rem;
-  margin-top: 0;
-  color:#337DFF
+  color: #337DFF;
+  border:2px solid #1f53c5;
+  padding: 0.5px 10px 0.5px 10px;
+  margin-left: 480px;
+  border-radius: 5px;
 }
 
 /* .search{
@@ -91,8 +223,37 @@ div.tabla-precio:hover{
   justify-content: flex-end;
 } */
 
-.button3{
+.button3 {
   padding: 0.3rem;
-  background-color:rgb(44, 13, 13);
-  color:white
+  background-color: rgb(44, 13, 13);
+  color: white
+}
+
+.card:hover {
+  box-shadow: 5px 10px 20px 1px black !important;
+  transition: all 0.5s linear;
+}
+
+.card-body {
+  padding: 2rem 0 !important;
+}
+
+.card-text {
+  padding: 0.3rem 1 rem;
+  font-size: 1rem;
+}
+
+/*con esto evitamos que la imagen se agrande mucho y hacemos que quede*/
+/*en su propio contenedor lo que hace que aparente que tiene movimiento*/
+.overflow {
+  overflow: hidden;
+}
+
+.card-img-top {
+  transition: all 0.7s ease-in-out;
+}
+
+/* aqui al acercar con el mouse se agranda la imagen */
+.card-img-top:hover {
+  transform: scale(1.1);
 }

@@ -20,19 +20,19 @@ function handleSubmit(e){
 }
 
 return (
-    <div class="searchEst">
-      <input class="inputSearch"
+    <form>
+      <input type="text" class="redondeado"
       type="search"
       name="search"
       placeholder="enter value to search"
       value={buscado}
       onChange={(e)=>onChangeInput(e)}    
       />
-      <button class="buttonSearch" 
+      <button class="btn btn-outline-success" 
       type="onSubmit" 
       onClick={(e)=>handleSubmit(e)}
       >Search Recipe
       </button>
-    </div> 
+    </form> 
 )
 }

@@ -1,7 +1,20 @@
-.contenedor2{
-    max-width:70rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
+.container-form {
+    height: 65rem; 
+    background: rgb(98,101,103);
+    background: linear-gradient(90deg, rgba(98,101,103,1) 18%, rgba(189,195,199,1) 66%, rgba(189,195,199,1) 79%, rgba(179,182,183,1) 100%);
+}
+
+.columnas-12{
+flex:0 0 100%;
+}
+
+
+.form-container{
+    background:#fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    /* margin-top: -8rem; */
 }
 
 .inpImag{
@@ -9,14 +22,31 @@
     height: 22px;
 }
 
-.labImag{
+
+
+.inputImag{
+    height: 3rem;
+}
+
+.labIma{
     font-weight: bold;
-    font-size: 1.5rem;
-    color: cornflowerblue;
+}
+
+.labSelect{
+    font-weight: bold;
 }
 
 .nota{
     color:red;
     font-weight: bold;
     font-size: 1rem;
+}
+
+.btn{
+    padding: 20px;
+}
+
+.alert{
+    color:tomato;
+    text-align: center;
 }

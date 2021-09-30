@@ -1,3 +1,4 @@
+const{API_KEY}=require('../utils/const')
 const { Router } = require('express');
 const axios=require('axios')
 const {v4:uuidv4}= require ('uuid');
@@ -8,7 +9,8 @@ const { ApireturnRec, DBreturnRec } = require('../function/FormReturnxID/Api-DBr
 
 //nueva apikey=606b82fa15064bd7af21793d2e079d79
 
-var apiKey=`606b82fa15064bd7af21793d2e079d79`
+var apiKey=process.env.API
+console.log(apiKey)
 const router = Router();
 //http://localhost:3001/recipeAll?name=Berry Banana Breakfast Smoothie este get me trae por nombre
 //http://localhost:3001/recipeAll
@@ -29,7 +31,7 @@ if(name){
 
 //const recipes=await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=100&addRecipeInformation=true`)
 const getRecipeApi=async()=>{
-const recipes=await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=100&addRecipeInformation=true`)
+const recipes=await axios.get(`https://api.spoonacular.com/recipes/complexSearch?${API_KEY}&number=100&addRecipeInformation=true`)
 const recipesRes=await recipes.data.results.map(e=>{
     return{
          id:e.id,

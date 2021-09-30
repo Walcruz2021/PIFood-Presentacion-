@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.StyleApp{
+/* formato de fondo dsegradado utilzando css-gradient   */
+/* height:350vh; */
+background: rgb(98,101,103);
+background: linear-gradient(90deg, rgba(98,101,103,1) 18%, rgba(189,195,199,1) 66%, rgba(189,195,199,1) 79%, rgba(179,182,183,1) 100%);
+} 

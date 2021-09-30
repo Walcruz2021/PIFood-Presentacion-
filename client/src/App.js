@@ -9,11 +9,11 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-    <div>
+    <div className="StyleApp">
       <Switch>
        <Route exact path="/" component={LandingPage}/>
        <Route path="/home" component={Home}/>
-       <Route path="/newRecipes" component={RecipeCreate}/>
+       <Route path="/newRecipe" component={RecipeCreate}/>
        <Route path="/details/:id" component={DetailsRecipe}/>
        <Route path="/search" component={Search}/>
       </Switch>

@@ -17,7 +17,7 @@ return(
      
         {
         pagesNumbers&&pagesNumbers.map(number=>(
-            <li key={number}>
+            <li class="page-item" key={number}>
               <a onClick={()=>paginado(number)}>{number}</a>
             </li>
         ))

@@ -1,42 +1,42 @@
-.image-fondo{
-background-image: url("../imagenes/asado2.jpg");
 
-/* posiionar imagen muestra imagen desde el centro y expandir */
-background-position: center center; 
+.image-fondo {
 
-/* muestra imagen pero que tome todo el alto y ancho disponible(tanto altura como anchgo)pero respetando proporciones */
-background-size: cover;
-height:100vh;
-
+  background-image: url("../imagenes/fondoPant3.jpg");
+  /* posiionar imagen muestra imagen desde el centro y expandir */
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* muestra imagen pero que tome todo el alto y ancho disponible(tanto altura como anchgo)pero respetando proporciones */
+  background-size: cover;
+  background-attachment:fixed;
+  position:relative;
+  overflow: hidden;
+  height: 95vh;
+  min-height:39rem;
+ 
 }
 
-@media (min-width:768px){
-    .image-fondo{
-      height:86vh; /*propiedad para darle tamaño a esta imagen 100vh segun altura de pantalla*/
-      min-height:20rem;/*le doy un minimo de tamaño para que no sea mas pequeña que este valor*/
-    }
+
+.tittle {
+  color: white;
+  font-size: 4rem;
+  text-align: center;
 }
 
-
-.tittle{
- color:white; 
- font-size:5rem; 
- text-align: center;
+.button1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 15rem;
+  margin-left: 22px;
+  border-radius: 6px;
+  /*se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos. */
+  color: white;
+  background-color: #010d13;
+  border: 2px solid white;
+  text-align: center;
+  padding: 1rem;
 }
 
-.button1{
-    font-size: 2rem;
-    text-align: center;
-    margin: 4rem;
-    border-radius: 6px;/*se trata del redondeado de los cantos de botón. Mientras más pixeles asignemos, más redondeados serán los bordes. Si, lo que queremos es un botón sin bordes redondeados, lo eliminaremos. */
-    color:white;
-    background-color: #010d13;
-    border: 2px solid white;
-    text-align: center;
-    padding: 1rem;
+.button1:hover {
+  color: #060707;
+  background-color: #ffffff;
 }
-
-.button1:hover{
-    color: #060707;
-    background-color: #ffffff;
-  }
