@@ -7,7 +7,7 @@ exito:"#1ed12d"
 }
 
 const Formul=styled.form`
-display:grid;
+
 grid-template-columns:1fr 1fr;
 gap:20px;
 
@@ -45,6 +45,7 @@ line-height:45px;
 padding:0 40 px 0 10px;
 transition:.3s ease all;
 border:3px solid transparent;
+margin-top:0;
 
 &:focus{
     border:3px  solid ${colores.borde};

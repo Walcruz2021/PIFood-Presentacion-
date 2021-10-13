@@ -202,6 +202,14 @@ ul.lista-precios li {
   }
 }
 
+.btnPag{
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50; /* Green */
+  padding: 2px;
+  margin: 3px;
+}
+
 
 .notSearch {
   text-align: center;
@@ -257,3 +265,4 @@ ul.lista-precios li {
 .card-img-top:hover {
   transform: scale(1.1);
 }
+

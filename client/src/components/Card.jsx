@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import cards from "./StylesGral/Home.css";
 
 export default function Card({ id, name, image, score, TypeDiets }) {
-  console.log(id,"card")
+  //console.log(id,"card")
   return (
     <div class="container">
     <div className="card text-center bg-dark">

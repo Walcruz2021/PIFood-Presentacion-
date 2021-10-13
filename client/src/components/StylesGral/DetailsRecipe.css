@@ -28,10 +28,12 @@ background: linear-gradient(90deg, rgba(246,221,204,1) 21%, rgba(253,242,233,1) 
     text-align: center;
 }
 
+
 .title{
-text-align: center;
-font-weight: bold;
-}
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    }
 
 .title2{
     font-weight: bold;

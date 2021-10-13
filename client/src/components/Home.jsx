@@ -8,13 +8,20 @@ import {
   filterTypesDiets,
   OrderXRating,
 } from "../actions";
+
+import { Paginado } from "./StylesGral/cssPaginado";
 import { useHistory } from "react-router-dom";
 import Card from "./Card";
-import Paginado from "./Paginado";
 import { Link } from "react-router-dom";
 import Search from "./Search.jsx";
 import Hom from "./StylesGral/Home.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAngleDoubleRight,
+  faAngleDoubleLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
+const itemPerPag = 9;
 export default function Home() {
   const dispatch = useDispatch();
   var history = useHistory();
@@ -24,29 +31,48 @@ export default function Home() {
   console.log(recipes);
   //Array(13) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, … ]
 
-  /////////////////***********PAGINADO***************//////////////////
+  //////////////////////2 PAGINADO////////////////////////
+  const recipesPerPag = 9;
+  const cantPaginas = Math.ceil(recipes.length / recipesPerPag);
+  //console.log(limite)
+  const [currentPage, setCurrentPage] = useState(0);
+  const [pagAct, setPagAct] = useState(1);
+  const getFilter = () => {
+    return recipes.slice(currentPage, currentPage + recipesPerPag);
+  };
 
+  const handlePrev = () => {
+    if (pagAct > 1) {
+      setCurrentPage(currentPage - recipesPerPag);
+      setPagAct(pagAct - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (pagAct >= 1 && pagAct < cantPaginas) {
+      setCurrentPage(currentPage + recipesPerPag);
+      setPagAct(pagAct + 1);
+    }
+  };
+
+  /////////////////////////////1 PAGINADO//////////////////////////////////////////
   //current=actual
-
-  const [currentPage, setCurrentPage] = useState(1);
-
+  //XXconst [currentPage, setCurrentPage] = useState(1);
   //console.log(currentPage)
   //const [currentPage,setCurrentPage]=useState(1)
-
   //cantidad de recetas por pagina segun README
-  const [recipePerPag, setRecipePerPag] = useState(9);
+  //XXconst [recipePerPag, setRecipePerPag] = useState(9);
+  //Ade,as necesito tener indices del primer recipe y del ultimo
+  //XXconst indexLastRec = currentPage * recipePerPag;
+  //XXconst indexPrimerRecipe = indexLastRec - recipePerPag;
 
-  //Ademas necesito tener indices del primer recipe y del ultimo
-  const indexLastRec = currentPage * recipePerPag;
-  const indexPrimerRecipe = indexLastRec - recipePerPag;
-
-  var currentRecipes;
-  if (recipes.length) {
-    currentRecipes = recipes.slice(indexPrimerRecipe, indexLastRec);
-  }
+  //XX var currentRecipes;
+  //XX if (recipes.length) {
+  //XX   currentRecipes = recipes.slice(indexPrimerRecipe, indexLastRec);
+  //XX }
   //const currentRecipes=recipes.slice(indexPrimerRecipe,indexLastRec)
 
-  console.log(currentRecipes);
+  //XXconsole.log(currentRecipes);
   //Array(9) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…} ]
   //en la primera impresion me tirara los primeros 9 recipes
 
@@ -60,9 +86,9 @@ export default function Home() {
   //el valor del argumento de la funciON "paginado" (pageNumber) viene
   //de componente PAGINADO
   //es decir primero pagenumber=1, luego pagenumber=2 , etc etc
-  const paginado = (pagenumber) => {
-    setCurrentPage(pagenumber);
-  };
+  // XXconst paginado = (pagenumber) => {
+  // XX  setCurrentPage(pagenumber);
+  // };
 
   useEffect(() => {
     dispatch(getRecipe());
@@ -134,13 +160,11 @@ export default function Home() {
   return (
     <div>
       <div class="barra">
-
         <div class="contenedor">
-         
           <div class="logo">
             <h4>Welcome to Recipes</h4>
           </div>
-
+          
           <div class="menu-movil">
             <span></span>
             <span></span>
@@ -149,12 +173,14 @@ export default function Home() {
           </div>
 
           <nav class="navegacion-principal">
-              <a><Search/></a>
-              <a>
+            <a>
+              <Search />
+            </a>
+            <a>
               <Link to="/newRecipe" class="nav-link active">
                 Create Recipes
               </Link>
-              </a>
+            </a>
           </nav>
         </div>
       </div>
@@ -171,6 +197,28 @@ export default function Home() {
           </option>
         </select>
 
+        <Paginado>
+            <FontAwesomeIcon
+              onClick={() => handlePrev()}
+              icon={faAngleDoubleLeft}
+              size="lg"
+              style={{ cursor: "pointer" }}
+            ></FontAwesomeIcon>
+            {/* <button class="btnPag"  id="1"  onClick={handlePrev}><i class="fal fa-chevron-double-right"></i></button>  */}
+            <span> </span>
+            <span>
+              {pagAct} de {cantPaginas}
+            </span>
+            {/* <button class="btnPag" onClick={handleNext}>next</button> */}
+            <span> </span>
+            <FontAwesomeIcon
+              onClick={() => handleNext()}
+              icon={faAngleDoubleRight}
+              size="lg"
+              style={{ cursor: "pointer" }}
+            ></FontAwesomeIcon>
+          </Paginado>
+
         <select class="select" onChange={(e) => onSelect3(e)}>
           <option class="lista-select" value="ascXrating">
             ascxRating
@@ -185,8 +233,8 @@ export default function Home() {
         {/*cards centradas*/}
         <div class="row">
           <h2 class="title">LIST OF RECIPES</h2>
-          {Array.isArray(currentRecipes) ? (
-            currentRecipes.map((e) => {
+          {Array.isArray(getFilter()) ? (
+            getFilter().map((e) => {
               return (
                 <div className="col-md-4">
                   <Card
@@ -206,12 +254,13 @@ export default function Home() {
         </div>
       </div>
 
-      <Paginado
+      {/* <Paginado currentPage={currentPage} items1={items1} nextHandler={nextHandler} prevHandler={prevHandler}/> */}
+      {/* XX<Paginado
         recipePerPag={recipePerPag}
         recipes={recipes.length}
         paginado={paginado}
-      />
-      <span class="migaja">{currentPage}</span>
+      /> */}
+      {/* XX<span class="migaja">{currentPage}</span> */}
     </div> //fin del primer div
   );
 }
